@@ -39,10 +39,21 @@ class Mensch():
 
 
     def readData():
-        with open("charData.txt", "r") as f:
-            a = f.readlines()
-            print(a)
+        with open("charData.txt","r") as f:
+            #a = f.readlines()
+            count = 0
+            i = 0
+            for line in enumerate(f):
+                count +=1
+            #while i < count:
+            #    a = f.readline().strip()
+            #    print(a)
+            #    i += 1
+            #a = f.readline().strip()
+            print(str(f.read()))
+            print(count)
             f.close()
+            #return Mensch()
 
 p1 = Mensch("ye")
 Mensch.readData()
