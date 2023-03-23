@@ -25,7 +25,7 @@ class Interface():
     def clear():
         os.system('cls')
         
-    def mainScreen(name, Gewicht, Groesse,IQ,wille):
+    def mainScreen(name, Gewicht, Groesse, IQ,wille):
         Interface.header(name, Gewicht, Groesse, IQ,wille)
         print("1: Eat")
         print("2: Run")
@@ -38,11 +38,11 @@ class Interface():
 
     def startGame():
         Interface.clear()
-        Interface.startScreen()
+        return Interface.startScreen()
         
-    def mainGame():
+    def mainGame(name, Gewicht, Groesse, IQ,wille):
         Interface.clear()
-        Interface.mainScreen()
+        Interface.mainScreen(name, Gewicht, Groesse, IQ,wille)
         
     def creatingPlayer():
         name = input("Its name?")

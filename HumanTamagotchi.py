@@ -8,5 +8,5 @@ else:
     p1 = Interface.creatingPlayer()
 
 while p1.alive == True:
-    Interface.mainGame()
+    Interface.mainGame(**p1.dictStat())
     pass

@@ -22,6 +22,9 @@ class Mensch():
     def stats(self):
         return self.__name, self.__gewicht, self.__groesse, self.__iq, self.__wille
     
+    def dictStat(self):
+        return {"name":self.__name,"Gewicht": self.__gewicht,"Groesse": self.__groesse,"IQ": self.__iq,"wille": self.__wille}
+    
     def die(self, alive):
         self.alive = False
         del self
