@@ -1,13 +1,13 @@
 import os
 #Erstellung der MEnschen Klasse
 class Mensch():
-    def __init__(self,name, gewicht=50,IQ=50,groesse=20):
+    def __init__(self,name, gewicht=50,groesse=20,IQ=50, wille=100):
         self.__name = name
         self.__gewicht = gewicht
         self.__iq = IQ
         self.__groesse = groesse
         self.alive = True
-        self.__wille = 100
+        self.__wille = wille
     
     #Essen zum zunehmen
     def essen(self, menge):
@@ -17,6 +17,7 @@ class Mensch():
     def laufen(self, menge):
         print("\t It ran {}".format(menge))
         self.__gewicht -= menge
+        print("Gewicht liegt bei {}".format(self.__gewicht))
         
     def stats(self):
         return self.__name, self.__gewicht, self.__groesse, self.__iq, self.__wille
@@ -36,24 +37,17 @@ class Mensch():
                 i += 1
             f.close()
             
-
-
     def readData():
         with open("charData.txt","r") as f:
-            #a = f.readlines()
-            count = 0
-            i = 0
-            for line in enumerate(f):
-                count +=1
-            #while i < count:
-            #    a = f.readline().strip()
-            #    print(a)
-            #    i += 1
-            #a = f.readline().strip()
-            print(str(f.read()))
-            print(count)
+            a = f.readlines()
+            data = []
+            print(a)
+            print(a[1])
+            for i in a:
+                print(i)
+                i.split()
+                print(i)
+                data.append(i)
+            print(data)
             f.close()
-            #return Mensch()
-
-p1 = Mensch("ye")
-Mensch.readData()
+            return Mensch(name=data[0], gewicht=int(data[1]),groesse=int(data[2]),IQ=int(data[3]), wille=int(data[4]))
