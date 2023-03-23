@@ -18,18 +18,22 @@ class Mensch():
         print("\t It ran {}".format(menge))
         self.__gewicht -= menge
         print("Gewicht liegt bei {}".format(self.__gewicht))
-        
+    
+    #Sends attribute values
     def stats(self):
         return self.__name, self.__gewicht, self.__groesse, self.__iq, self.__wille
     
+    #sends attribute values as a dictionary for easier parameter use
     def dictStat(self):
         return {"name":self.__name,"Gewicht": self.__gewicht,"Groesse": self.__groesse,"IQ": self.__iq,"wille": self.__wille}
     
+    #To kill it
     def die(self, alive):
         self.alive = False
         del self
         print("\t Your human died")
     
+    #Save function 
     def saveData(self):
         with open("charData.txt","w") as f:
             all = [self.__name, self.__gewicht, self.__groesse, self.__iq, self.__wille]
@@ -39,7 +43,8 @@ class Mensch():
                 f.write("{}\n".format(str(all[i])))
                 i += 1
             f.close()
-            
+    
+    #read saved data and create object
     def readData():
         with open("charData.txt","r") as f:
             a = f.readlines()
