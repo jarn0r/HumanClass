@@ -1,0 +1,6 @@
+Superklasse Ressourcen für Essen, Geld etc
+
+Klasse Komplexe
+
+Essen gibt Energie
+	-> Zuviel macht fett, zu wenig dünn, zu dünn = Tot
