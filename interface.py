@@ -14,19 +14,20 @@ class Interface():
         else:
             return 2
 
-    def header(name, Gewicht, Groesse, IQ,wille):
+    def header(obj):
         Interface.clear()
         print("\t Welcome to your own Human Generator")
         print("\t ****************************************************")
         print("\t Your current Human is:")
-        print("\t Name: ", name," Weight: ", Gewicht," Intelligence: ", IQ," Height: ", Groesse, " Wille: ", wille, "%")
+        #print("\t Name: ", name," Weight: ", Gewicht," Intelligence: ", IQ," Height: ", Groesse, " Wille: ", wille, "%")
+        print(obj)
         pass
 
     def clear():
         os.system('cls')
         
-    def mainScreen(name, Gewicht, Groesse, IQ,wille):
-        Interface.header(name, Gewicht, Groesse, IQ,wille)
+    def mainScreen(obj):
+        Interface.header(obj)
         print("1: Eat")
         print("2: Run")
         print("3: Weigh")
@@ -40,9 +41,9 @@ class Interface():
         Interface.clear()
         return Interface.startScreen()
         
-    def mainGame(name, Gewicht, Groesse, IQ,wille):
+    def mainGame(obj):
         Interface.clear()
-        Interface.mainScreen(name, Gewicht, Groesse, IQ,wille)
+        Interface.mainScreen(obj)
         
     def creatingPlayer():
         name = input("Its name?")

@@ -9,6 +9,13 @@ class Mensch():
         self.alive = True
         self.__wille = wille
     
+    def __repr__(self) -> str:
+        pass
+        
+    def __str__(self) -> str:
+        return '\t Name: {} Weight: {} Intelligence: {} Height: {} Will: {} '.format(self.__name,self.__groesse,self.__gewicht, self.__iq, self.__wille)
+        pass
+    
     #Essen zum zunehmen
     def essen(self, menge):
         self.__gewicht += menge
@@ -45,7 +52,8 @@ class Mensch():
             f.close()
     
     #read saved data and create object
-    def readData():
+    @classmethod
+    def readData(cls):
         with open("charData.txt","r") as f:
             a = f.readlines()
             data = []
