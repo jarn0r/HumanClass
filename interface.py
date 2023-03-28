@@ -47,24 +47,4 @@ class Interface():
         
     def creatingPlayer():
         name = input("Its name?")
-        gewicht = int(input("How much does it weight?"))
-        iq = int(input("How smart is it?"))
-        grosse = int(input("How big is it?"))
-        return Mensch(gewicht=gewicht,IQ=iq,groesse=grosse, name=name)
-        
-
-
-
-"""
-startScreen()
-name = input("Its name?")
-gewicht = int(input("How much does it weight?"))
-iq = int(input("How smart is it?"))
-grosse = int(input("How big is it?"))
-p1 = Mensch(gewicht=gewicht,IQ=iq,groesse=grosse, name=name)
-
-while(p1.alive):
-    name, wheight, height, iq, wille = p1.stats()
-    header(name=name, Gewicht=wheight, IQ=iq, Groesse=height)
-    mainScreen()
-"""
+        return Mensch(name=name)

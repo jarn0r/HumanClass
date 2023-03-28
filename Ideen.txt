@@ -1,6 +1,37 @@
-Superklasse Ressourcen für Essen, Geld etc
+Menschen KLasse für Eigene Attribute
+	-Energie
+	-Wille
+	-Hunger
+	-Name
+	-IQ
+	-Lebendig
+	-Gewicht(Ob zu leicht, normal, fett, adipös)
 
-Klasse Komplexe
+Interface
+	-Aufbau UI
+	-Interaktion mit den Klassen
 
-Essen gibt Energie
-	-> Zuviel macht fett, zu wenig dünn, zu dünn = Tot
+Ressources Super
+	-Geld sub
+	-Essen sub
+
+
+Komplexe
+	-Verschiedene Komplexe um schneller zu sterben
+
+Job
+	-Verdient Wie viel
+	-Anforderungen
+
+Freunde
+	-Name
+	-Stufe der Freundschaft
+
+Wohnort
+	-Miete
+	-Luxuriös
+	-Wo (NY was auch immer)
+	-Standort
+
+Main
+

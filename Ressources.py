@@ -26,3 +26,6 @@ class Money(Ressources):
     def __init__(self, menge) -> None:
         super().__init__(menge)
     pass
+
+
+#Save MEthod and read method add

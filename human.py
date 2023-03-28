@@ -1,38 +1,29 @@
 import os
 #Erstellung der MEnschen Klasse
 class Mensch():
-    def __init__(self,name, gewicht=50,groesse=20,IQ=50, wille=100):
+    def __init__(self,name,energy=100, hunger=50,IQ=50, wille=100, form="Normal"):
         self.__name = name
-        self.__gewicht = gewicht
+        self.__hunger = hunger
         self.__iq = IQ
-        self.__groesse = groesse
+        self.__energy = energy
         self.alive = True
         self.__wille = wille
+        self.__form = form
     
     def __repr__(self) -> str:
         pass
         
     def __str__(self) -> str:
-        return '\t Name: {} Weight: {} Intelligence: {} Height: {} Will: {} '.format(self.__name,self.__groesse,self.__gewicht, self.__iq, self.__wille)
+        return '\t Name: {} Hunger: {} Energy: {} Intelligence: {} Will: {} Form:{}'.format(self.__name,self.__hunger,self.__energy, self.__iq, self.__wille, self.__form)
         pass
-    
-    #Essen zum zunehmen
-    def essen(self, menge):
-        self.__gewicht += menge
-    
-    #Laufen zum abnehmen  
-    def laufen(self, menge):
-        print("\t It ran {}".format(menge))
-        self.__gewicht -= menge
-        print("Gewicht liegt bei {}".format(self.__gewicht))
     
     #Sends attribute values
     def stats(self):
-        return self.__name, self.__gewicht, self.__groesse, self.__iq, self.__wille
+        return self.__name, self.__hunger, self.__energy, self.__iq, self.__wille
     
     #sends attribute values as a dictionary for easier parameter use
     def dictStat(self):
-        return {"name":self.__name,"Gewicht": self.__gewicht,"Groesse": self.__groesse,"IQ": self.__iq,"wille": self.__wille}
+        return {"name":self.__name,"hunger": self.__hunger,"energy": self.__energy,"IQ": self.__iq,"wille": self.__wille}
     
     #To kill it
     def die(self, alive):
@@ -43,7 +34,7 @@ class Mensch():
     #Save function 
     def saveData(self):
         with open("charData.txt","w") as f:
-            all = [self.__name, self.__gewicht, self.__groesse, self.__iq, self.__wille]
+            all = [self.__name, self.__hunger, self.__energy, self.__iq, self.__wille, self.__form]
             print(len(all))
             i = 0
             while i<len(all):
@@ -66,5 +57,7 @@ class Mensch():
                 data.append(i)
             print(data)
             f.close()
-            return Mensch(name=data[0], gewicht=int(data[1]),groesse=int(data[2]),IQ=int(data[3]), wille=int(data[4]))
+            return Mensch(name=data[0], hunger=int(data[1]),energy=int(data[2]),IQ=int(data[3]), wille=int(data[4]), form=data[5])
         
+
+#Threading add
