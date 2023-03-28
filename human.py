@@ -67,3 +67,4 @@ class Mensch():
             print(data)
             f.close()
             return Mensch(name=data[0], gewicht=int(data[1]),groesse=int(data[2]),IQ=int(data[3]), wille=int(data[4]))
+        
