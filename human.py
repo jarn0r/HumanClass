@@ -1,7 +1,8 @@
 import os
+import Ressources
 #Erstellung der MEnschen Klasse
 class Mensch():
-    def __init__(self,name,energy=100, hunger=50,IQ=50, wille=100, form="Normal"):
+    def __init__(self,name,energy=100, hunger=50,IQ=50, wille=100, form="Normal",health=100, money = 10):
         self.__name = name
         self.__hunger = hunger
         self.__iq = IQ
@@ -9,12 +10,15 @@ class Mensch():
         self.alive = True
         self.__wille = wille
         self.__form = form
+        self.__health = health
+        self.__money = Ressources.Money(money)
+        #self.__food = Ressources.Food(3)
     
     def __repr__(self) -> str:
         pass
         
     def __str__(self) -> str:
-        return '\t Name: {} Hunger: {} Energy: {} Intelligence: {} Will: {} Form:{}'.format(self.__name,self.__hunger,self.__energy, self.__iq, self.__wille, self.__form)
+        return '\t Name: {} Hunger: {} Energy: {} Intelligence: {} Will: {} Form:{} \n\t Money: {} Health:{}'.format(self.__name,self.__hunger,self.__energy, self.__iq, self.__wille, self.__form, self.__money, self.__health)
         pass
     
     #Sends attribute values
@@ -34,7 +38,8 @@ class Mensch():
     #Save function 
     def saveData(self):
         with open("charData.txt","w") as f:
-            all = [self.__name, self.__hunger, self.__energy, self.__iq, self.__wille, self.__form]
+            #def __init__(self,name,energy=100, hunger=50,IQ=50, wille=100, form="Normal",health=100, money = 10):
+            all = [self.__name, self.__hunger, self.__energy, self.__iq, self.__wille, self.__form, self.__health, self.__money]
             print(len(all))
             i = 0
             while i<len(all):
@@ -57,7 +62,8 @@ class Mensch():
                 data.append(i)
             print(data)
             f.close()
-            return Mensch(name=data[0], hunger=int(data[1]),energy=int(data[2]),IQ=int(data[3]), wille=int(data[4]), form=data[5])
+            #def __init__(self,name,energy=100, hunger=50,IQ=50, wille=100, form="Normal",health=100, money = 10):
+            return Mensch(name=data[0], hunger=int(data[1]),energy=int(data[2]),IQ=int(data[3]), wille=int(data[4]), form=data[5], health=int(data[6]),money=int(data[7]))
         
 
 #Threading add
